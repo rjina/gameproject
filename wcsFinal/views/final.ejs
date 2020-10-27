@@ -1,0 +1,108 @@
+<script src = "/wcsGame/enchant.js"></script>
+<script src = "/wcsGame/wcs.js"></script>
+
+<script>
+
+    window.onload = function() {
+        var game = new Core(500, 120);
+
+
+
+
+
+        game.preload(WCS.image.basic.imageArray);
+
+        game.onload = function() {
+            game.backgroundColor = "RGB(242,242,242)";
+            bg = new Sprite(230, 130);
+            bg.backgroundColor = "pink";
+
+            game.rootScene.addChild(bg);
+
+
+            console.log("<%= result.AName%>");
+
+            console.log("<%= result.BName%>");
+            var player1 = new winPlayer(150, 50, "<%= result.AName%>", "lose");
+            var player2 = new losePlayer(30, 50, "<%= result.BName%>", "win");
+
+        }
+
+        game.start();
+
+        var winPlayer = enchant.Class.create(enchant.Sprite, {
+
+            initialize : function(x, y, name, state){
+                enchant.Sprite.call(this, 32, 32);
+                this.image = game.assets[WCS.image.basic.imageArray[10]];
+                this.name = name;
+                this.x =x;
+                this.y =y;
+                this.scaleX = 2;
+                this.scaleY = 2;
+                this.nameLabel = new NameLabel(this);
+                this.nameLabel2 = new NameLabel2(this, state);
+
+                this.frame = [0,1,2];
+
+                game.rootScene.addChild(this);
+            }
+        });
+
+        var losePlayer = enchant.Class.create(enchant.Sprite, {
+
+            initialize : function(x, y, name, state){
+                enchant.Sprite.call(this, 32, 32);
+                this.image = game.assets[WCS.image.basic.imageArray[9]];
+                this.name = name;
+                this.x =x;
+                this.y =y;
+                this.frame = [0,1,2];
+                this.scaleX = 2;
+                this.scaleY = 2;
+                this.nameLabel = new NameLabel(this);
+                this.nameLabel2 = new NameLabel2(this, state);
+
+                game.rootScene.addChild(this);
+            }
+        });
+
+
+        //NameLabel Class
+        var NameLabel = enchant.Class.create(enchant.Label, {
+            initialize : function(Player){
+                enchant.Label.call(this);
+                this.text = Player.name;
+                this.font = "25px monospace";
+                this.color = "red";
+                this.on(Event.ENTER_FRAME, function(){
+                    this.moveTo(Player.x-10, Player.y + 40);
+
+                });
+                game.rootScene.addChild(this);
+            }
+        });
+
+        var NameLabel2 = enchant.Class.create(enchant.Label, {
+            initialize : function(Player, state){
+                enchant.Label.call(this);
+                this.text = state;
+                this.font = "40px monospace";
+                if(state == "win"){
+                    this.color = "blue";
+                } else {
+                    this.color = "white";
+                }
+
+                this.on(Event.ENTER_FRAME, function(){
+                    this.moveTo(Player.x-20, Player.y - 40);
+
+                });
+                game.rootScene.addChild(this);
+            }
+        });
+
+
+
+    }
+</script>

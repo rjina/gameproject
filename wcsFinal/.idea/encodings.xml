@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/public/fonts" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/public/images" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/public/images/battle.gif" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/battle_sub1.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/battle_sub2.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/bitmanager.PNG" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/char1.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/char2.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/char3.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/char4.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/char5.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/cookie_00.PNG" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/hongil.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/intro3.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/sweet_apple_acres__svg__by_stinkehund-d4zr74f.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/tit_login.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/wcs.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/wcs01.PNG" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/wcs02.PNG" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/wcs03.PNG" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/wcs04.PNG" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/wcs05.PNG" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/images/wcs06.PNG" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/board/board.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/code/code.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/drifolio.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/game/ranking.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/jquery.easing.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/jquery.jribbble-1.0.1.ugly.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/jquery.nicescroll.min.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/loginRegister.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/mypage/mypage.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/stylesheets" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/public/stylesheets/table/AdminLTE.min.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/wcsGame/enchant.js" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/public/wcsGame/image/basic/character.png" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/public/wcsGame/image/basic/exclosionEffect.png" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/public/wcsGame/image/basic/icon0.png" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/public/wcsGame/image/basic/mark.png" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/routes/index.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/users.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/error.ejs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/index.ejs" charset="x-windows-949" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

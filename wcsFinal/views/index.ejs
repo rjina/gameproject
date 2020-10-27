@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ===========================
+  THEME INFO
+  =========================== -->
+  <meta name="description" content="A free Bootstrap powerd HTML template exclusively crafted for the super lazy designers like me who designed thousand of websites till today but never got a chance to build one himself.">
+  <meta name="keywords" content="Free Portfolio Template, Free Template, Free Bootstrap Template, Dribbble Portfolio Template, Free HTML5 Template">
+  <meta name="author" content="EvenFly Team">
+
+  <!-- DEVEOPER'S NOTE:
+  This is a free Bootstrap powered HTML template from EvenFly. Feel free to download, modify and use it for yourself or your clients as long there is no money involved.
+
+  Please don't try to sale it from anywhere; because I want it to be free, forever. If you sale it, That's me who deserves the money, not you :)
+  -->
+
+  <!-- ===========================
+  SITE TITLE
+  =========================== -->
+  <title>WCS CODE BATTLE</title><!-- This is what you see on your browser tab-->
+
+  <!-- ===========================
+  FAVICONS
+  =========================== -->
+  <link rel="icon" href="./images/favicon.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./images/apple-touch-icon-ipad-retina.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="./images/apple-touch-icon-iphone-retina.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="./images/apple-touch-icon-ipad.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="./images/apple-touch-icon-iphone.png" />
+
+  <!-- ===========================
+  STYLESHEETS
+  =========================== -->
+  <link rel="stylesheet" href="./stylesheets/main/bootstrap.min.css" media="only all and (min-width:768px)">
+  <link rel="stylesheet" href="./stylesheets/main/preloader.css" media="only all and (min-width:768px)">
+
+  <link rel="stylesheet" href="./stylesheets/main/style.css" media="only all and (min-width:768px)">
+  <link rel="stylesheet" href="./stylesheets/login/style.css" media="only all and (min-width:768px)">
+
+  <link rel="stylesheet" href="./stylesheets/main/responsive.css" media="only all and (min-width:768px)">
+  <link rel="stylesheet" href="./stylesheets/main/animate.css" media="only all and (min-width:768px)">
+
+  <!-- ===========================
+  ICONS:
+  =========================== -->
+  <link rel="stylesheet" href="./stylesheets/main/simple-line-icons.css">
+
+  <!-- ===========================
+  GOOGLE FONTS
+  =========================== -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/jejugothic.css"><!--0902 수정-->
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Snowburst+One'>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- ===========================
+   GOOGLE ANALYTICS (Optional)
+   =========================== -->
+
+  <!--Replace this line with your analytics code-->
+
+  <!-- Analytics end-->
+
+  <!-- 로그인 style-->
+
+
+  <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+  <!-- 랭킹 테이블 style -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="./stylesheets/table/AdminLTE.min.css">
+  <link rel="stylesheet" href="./stylesheets/table/_all-skins.min.css">
+  <link rel="stylesheet" href="./stylesheets/table/jquery-jvectormap-1.2.2.css">
+  <link rel="stylesheet" href="./stylesheets/table/style.css">
+
+</head>
+<script>
+
+</script>
+<body data-spy="scroll">
+<script src="/socket.io/socket.io.js"></script>
+<!-- Preloader -->
+<div id="preloader">
+  <div id="status">
+    <div class="loadicon icon-moustache wow tada infinite" data-wow-duration="8s"></div>
+  </div>
+</div>
+
+<header style="overflow-y:auto; overflow-x:hidden; width:100%; height:auto;">
+  <!-- ===========================
+  HERO AREA
+  =========================== -->
+  <div id="hero" style="height: 1000px">
+    <div class="container herocontent" >
+      <h2  class="wow fadeInUp" data-wow-duration="2s" style="font-size: 100px; font-family: 'Snowburst One', cursive; color: #3b5998; font-weight: bold">CODE BATTLE</h2>
+      <!--<h4 class="wow fadeInDown" data-wow-duration="3s">밑에 게임 영상</h4>-->
+    </div>
+
+    <!-- 로그인 -->
+
+    <div id="loginBanner">
+
+      <!-- Form Module-->
+      <div class="module form-module" style="background: transparent;border-top: 3px solid #3b5998; border-bottom: 3px solid #3b5998;">
+        <div id = "loginRegisterToggle" class="toggle" style="margin: auto"><i class="fa fa-times fa-pencil"></i>
+          <div class="tooltip"  style="background-color:#3b5998; color: #ffffff">Register</div>
+        </div>
+        <div class="form">
+          <h2>Login to your account</h2>
+          <form>
+            <input id="logId" type="text" placeholder="Username" style="color:#3b5998 ; opacity: 0.5" />
+            <input id="logPw" type="password" placeholder="Password" style="opacity: 0.5"/>
+            <button id="login">Login</button>
+
+          </form>
+        </div>
+        <div class="form">
+          <h2>Create an account</h2>
+          <form>
+            <input type="text" placeholder="Id" id="registerId" name="registerId" style="opacity: 0.5" required><!--중복검사-->
+            <div id="idCheckMsg"></div>
+            <input type="password" placeholder="Password" id="registerPw" name="registerPw" style="opacity: 0.5" required/>
+            <input type="password" placeholder="Confirm Password " id="registerConfirmPw" name="registerConfirmPw" style="opacity: 0.5"required /> <!--비번확인-->
+            <div id="confirmPwMsg" ></div>
+            <input type="text" placeholder="Username" id="registerName" name="registerName"style="opacity: 0.5" required/>
+            <div>
+              <img id="profileFiles" height='100' width='100'>
+              <button id="profileModal" style= " width: 70px; height: 50px;" data-toggle="modal" data-target="#myModal">
+                profile<br>
+              </button>
+              <br>
+              <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">첨부파일</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>첨부 할 프로필 사진을 드래그 해주세요</p>
+                      <div style = "height : 200px " id="dropZone"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="modal-footer">
+                      <button id="profileFilesColseBtn" type="button" class="btn btn-default"
+                              data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <button name= "btnJoin" id="btnJoin">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Featured image on the Hero area -->
+    <!-- 이미지가 아닌 게임 영상-->
+    <!--<img class="heroshot wow bounceInUp" data-wow-duration="4s" src="./images/hongil.png" alt="Featured Work">-->
+  </div><!--HERO AREA END-->
+
+  <!-- ===========================
+   NAVBAR START
+   =========================== -->
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#hero" id="loginPage">
+          <!-- Replace Drifolio Bootstrap with your Site Name and remove icon-grid to remove the placeholder icon -->
+          <!--<span class="brandicon icon-home"></span>-->
+          <span id="loginPage" class="brandname" style="color: seashell; font-family: 'Snowburst One', cursive; font-weight: bold">CODE BATTLE</span>
+        </a>
+      </div>
+      <!--class="myapps row"-->
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right"><!--YOUR NAVIGATION ITEMS STRAT BELOW-->
+          <li><a href="#about"><span class="btnicon icon-info" ></span>게임 소개</a></li>
+          <li><a id="boardSection" href="#boardPage"><span class="btnicon icon-speech"></span>자유 게시판</a></li>
+          <li><a id="codeSection" href="#portfolio"><span class="btnicon icon-note"></span>코드 작성하기</a></li>
+          <li><a id="game" href="#testimonials"><span class="btnicon icon-game-controller"></span>게임하기</a></li>
+          <!--don't forget to replace my email address below with yours-->
+          <!--data-toggle="modal" data-target="#myPageModal"-->
+
+          <li><a id="myPage" data-toggle="modal" data-target="#myPageModal" href=""><span class="btnicon icon-user"></span>내 정보</a></li>
+          <li><a href="#" id="logout"><span class="btnicon icon-logout logoutbtn"></span>Logout</a></li>
+          <!--<li><button type="button" class="logoutbtn btn-lg" id="logout" style="background-color: transparent;border:hidden;color: antiquewhite;font-size:15px">Logout</button></li>-->
+          <div class="module form-module" style="border-top: black">
+            <div class="modal fade" id="myPageModal" role="diolog">
+              <div class="modal-dialog">
+                <div class="modal-content" style="width:430px; margin-left:460px">
+                  <div class="modal-header">
+                    <h4 class="modal-title">My Page</h4>
+                  </div>
+                  <div class="modal-body">
+
+                    <div id="Box">
+                      <div id="imgArea"><img id="myPhoto" width="100px" height="100px" /><br><button id="updatePhoto" type="button" class="btn btn-warning" style="width:auto; height:40px; margin-bottom:auto; margin-top:20px">수정</button></div><!--이미지 뜨는 부분-->
+                      <div id="content"><h4>이름</h4><div id="myName"></div><br>
+                        <h4 >아이디</h4><div id="myId"></div><br>
+                        <button id="modifyPw" type="button" class="btn btn-warning" data-toggle="modal" data-target="#pwModal" style="width:auto; height:40px; margin-bottom:auto; margin-top:auto">비번수정</button>
+                        <!-------------------------------------------------------->
+
+                        <div class="modal fade" id="pwModal" role="diolog">
+                          <div class="modal-dialog">
+                            <div class="modal-content" style="width:430px; margin-left:85px; margin-top:110px">
+                              <div class="modal-header">
+                                <h4 class="modal-title">비밀번호 수정</h4>
+                              </div>
+                              <div class="modal-body">
+                                <div class="updatePwDIV" style="display: none;">
+                                  <input type="password" id="currentPw"  placeholder="현재 비밀번호">
+                                  <input type="password" id="newPw"  placeholder="변경할 비밀번호">
+                                  <button id="updatePw" type="button" style="width:auto; height:40px">변경</button>
+                                </div>
+                                <!--<a href="" id="updatePw" data-toggle="popover" title="비번 수정" class="btn btn-warning btn-flat" data-content="Some content inside the popover">비번 수정</a>-->
+                              </div>
+                              <div class="clearfix"></div>
+                              <div class="modal-footer">
+
+                                <button id="changePwBtn" type="button" class="btn btn-warning"
+                                        style="width:auto; height:40px; margin-right:150px">Close</button>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                        <!-------------------------------------------------------->
+                        <!--<a href="" id="updatePw" data-toggle="popover" title="비번 수정" data-content="Some content inside the popover">비번 수정</a>-->
+                      </div>
+                      <div id="score">
+                        <table id="myRank" class="table table-striped">
+                          <h4>나의 전적</h4>
+
+                        </table>
+                      </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="modal-footer">
+
+                      <button id="clsMypageBtn" type="button"
+                              data-dismiss="modal" class="btn btn-warning" style="width:auto; height:40px; margin-right:150px">Close</button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!--<li class="active"><a href=""><span class="btnicon icon-cloud-download"></span>Download CV</a></li>-->
+
+        </ul>
+
+      </div><!--.nav-collapse -->
+    </div>
+  </nav><!--navbar end-->
+
+
+</header><!--header end-->
+
+
+<!-- ===========================
+FEATURED CLIENTS SECTION START
+=========================== -->
+<!--<div id="clients">-->
+<!--<div class="container">-->
+<!--<div class="col-md-3">-->
+<!--<h4>Proudly worked with:</h4>-->
+<!--</div>-->
+<!--<div class="col-md-9">-->
+<!--<ul>&lt;!&ndash;CLIENTS LOGO&ndash;&gt;-->
+<!--<li><img src="./images/payoneer.png" alt="Payoneer"></li>-->
+<!--<li><img src="./images/amazon.png" alt="Amazon"></li>-->
+<!--<li><img src="./images/elance-odesk.png" alt="Elance-oDesk"></li>-->
+<!--<li><img src="./images/curb.png" alt="Curb Envy"></li>-->
+<!--</ul>&lt;!&ndash;CLIENTS LOGO END&ndash;&gt;-->
+<!--</div>-->
+<!--</div>-->
+<!--<hr>&lt;!&ndash; SECTION SEPARETOR LINE &ndash;&gt;-->
+<!--</div>&lt;!&ndash;FEATURED CLIENTS SECTION END&ndash;&gt;-->
+
+
+<!-- ===========================
+ABOUT SECTION START
+=========================== -->
+<div id="about" class="container" style="height: 1000px">
+
+  <!----------- 0902.게임소개 contents 수정------------------------->
+  <!-- LEFT PART OF THE ABOUT SECTION -->
+  <div class="col-md-6" >
+    <!--<div class="row">-->
+
+    <style>
+      .myapps ul li h1 {
+        float: left;}
+    </style>
+    <!--<h2 class="wow fadeInDown" data-wow-duration="2s" style="font-family: jeju gothic">게임 소개</h2>-->
+    <div class="myapps row" >
+      <ul><!-- FAVORITE APP ICONS START -->
+        <li><h1 class="wow animated bounceInUp " data-wow-duration="1s">게</h1>
+          <h1 class="wow bounceInUp" data-wow-duration="2s">임</h1>
+          <h1 class="wow bounceInUp" data-wow-duration="3s" >소</h1>
+          <h1 class="wow animated bounceInUp" data-wow-duration="4s">개</h1></li>
+      </ul><!-- FAVORITE APP ICONS END -->
+    </div>
+
+    <br/>
+    <h3 class="wow fadeInUp" data-wow-duration="3s">내가 만든 코드의 힘!</h3>
+    <p class="wow fadeInDown" data-wow-duration="3s" style="font-size: 18px;">
+      CODE BATTLE은 자바 스크립트 기반의 프로그래밍 게임으로써,
+      제공된 API에 따라 자신만의 창의적이고 논리적인 인공지능 캐릭터를 제작하여
+      상대방과 웹 상에서 실시간으로 배틀을 할 수 있는 커스텀 웹 게임입니다.</p>
+
+    <br/>
+    <h3 class="wow fadeInUp" data-wow-duration="3s">왜 자바스크립트인가?</h3>
+    <p class="wow fadeInDown" data-wow-duration="3s" style="font-size: 18px">함수형 언어이면서 프로토타입의 객체지향형 언어인 자바스크립트는
+      간단한 문법을 따르지만, 코딩 방법이 굉장히 유연해 악마의 언어라고도 불립니다.
+      이 악명높은 언어를 사용하여 자신의 프로그래밍 실력을 확인하고, 최고의 자리에 도전하세요!</p>
+
+    <br/>
+    <h3 class="wow fadeInUp" data-wow-duration="3s">치열한 전투 전략과 진화</h3>
+    <p class="wow fadeInDown" data-wow-duration="3s" style="font-size: 18px">내가 만든 코드의 힘을 확인하고 싶은 모든 사람, 도전하라!!</p>
+
+    <div class="myapps row"> <!--ul 가로 정렬 클래스-->
+
+      <ul><!-- FAVORITE APP ICONS START -->
+        <li><img class="wow animated bounceInUp" data-wow-duration="4s" src="./images/char1.png" style="width: 40px; height: 40px"></li>
+        <li><img class="wow bounceInUp" data-wow-duration="5s" src="./images/char2.png" style="width: 40px; height: 40px"></li>
+        <li><img class="wow bounceInUp" data-wow-duration="6s" src="./images/char3.png" style="width: 40px; height: 40px"></li>
+        <li><img class="wow animated bounceInUp" data-wow-duration="7s" src="./images/char4.png" style="width: 40px; height: 40px"></li>
+        <li><img class="wow animated bounceInUp" data-wow-duration="8s" src="./images/char5.png" style="width: 40px; height: 40px"></li>
+        <!--<li><img class="wow bounceInUp" data-wow-duration="5s" src="./images/indesign.svg" alt="InDesign"></li>-->
+      </ul><!-- FAVORITE APP ICONS END -->
+
+    </div>
+  </div><!-- LEFT PART OF THE ABOUT SECTION END -->
+  <!--Left part end-->
+
+  <!-- RIGHT PART OF THE ABOUT SECTION -->
+  <div class="col-md-6 wow fadeInUp myphoto" data-wow-duration="4s">
+    <div><img src="./images/battle.gif" style="width: 600px;height: auto; padding-top:100px;"/></div>
+    <div class="myapps row" style="width: 650px; padding-left: 15px;">
+      <ul>
+        <li><img src="./images/battle_sub1.jpg" style="width: 340px; height: 250px;"></li>
+        <li><img src="./images/battle_sub2.jpg" style="width: 255px; height: 250px; padding-left: 20px;"></li>
+      </ul>
+    </div>
+  </div><!-- RIGHT PART OF THE ABOUT SECTION END -->
+</div><!-- ABOUT SECTION END -->
+
+<hr><!-- SECTION SEPARETOR LINE -->
+
+<!-- ===========================
+SERVICE SECTION START
+=========================== -->
+<div id="boardPage" class="container" style="height: 1000px">
+  <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
+    <span class="bigicon icon-speech"></span>
+    <h3>자유 게시판</h3>
+    <hr class="separetor">
+  </div><!-- BOARD SECTIONHEAD END -->
+
+  <!-- SERVICE ITEMS START -->
+  <div class="row">
+    <!-- BOARD TABLE START -->
+    <div class="scrollhidden_explorer" id="div-scroll" style="overflow: scroll; height: 500px;">
+
+      <table id="board" class="table table-striped">
+        <tr bgcolor="#ffb6c1">
+          <th width="10%">글번호</th>
+          <th width="40%">제목</th>
+          <th width="30%">작성자</th>
+          <th width="10%">조회수</th>
+          <th width="10%">댓글수</th>
+        </tr>
+      </table>
+
+    </div><!-- BOARD TABLE END -->
+    <br/>
+    <button href="#writeModal" id="btn-write" class="btn btn-primary" style="float: right" data-toggle="modal">글쓰기</button>
+
+    <!-- WRITE PAGE MODAL START -->
+    <div>
+      <div class="modal fade" id="writeModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 class="modal-title">Write Page</h3>
+            </div>
+            <div class="modal-body">
+              <table class="table table-striped" width="100%">
+                <tr>
+                  <td width="20%">작성자</td>
+                  <td width="80%"><input type="text" name="writer" id="write-writer" style="width: 100%; border: 0px; background-color:transparent;" readonly></td>
+                </tr>
+                <tr>
+                  <td>제목</td>
+                  <td><input type="text" name="title" id="write-title" style="width: 100%; border: 0px; background-color:transparent;"></td>
+                </tr>
+                <tr>
+                  <td>내용</td>
+                  <td><input type="text" name="content" id="write-content" style="width: 100%; border: 0px; background-color:transparent;"></td>
+                </tr>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+              <button type="button" id="btn-writeConfirm" class="btn btn-primary" data-dismiss="modal">Save</button>
+            </div>
+
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    </div><!-- WRITE PAGE MODAL END -->
+    <!-- READ PAGE MODAL START -->
+    <div>
+      <div class="modal fade" id="readModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 class="modal-title" id="readModal-title"></h3>
+            </div>
+            <div class="modal-body">
+              <table class="table table-striped" width="100%">
+                <tr>
+                  <td width="20%">작성자</td>
+                  <td width="80%"><input type="text" name="writer" id="read-writer" style="width: 100%; border: 0px; background-color:transparent;"></td>
+                </tr>
+                <tr>
+                  <td>제목</td>
+                  <td><input type="text" name="title" id="read-title" style="width: 100%; border: 0px; background-color:transparent;"></td>
+                </tr>
+                <tr>
+                  <td>내용</td>
+                  <td><input type="text" name="content" id="read-content" style="width: 100%; border: 0px; background-color:transparent;"></td>
+                </tr>
+              </table>
+            </div>
+            <div id="readModal-footer" class="modal-footer">
+              <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="btn-modify">Modify</button>
+              <button type="button" class="btn btn-danger" id="btn-delete" data-dismiss="modal">Delete</button>
+            </div>
+            <div id="readModal-replies" style="overflow: scroll; height: 200px;">
+              <table id="replies" class="table table-striped" width="100%">
+                <tr>
+                  <th width="20%">작성자</th>
+                  <th width="45%">내용</th>
+                  <th width="30%">작성일</th>
+                  <th width="15%"></th>
+                </tr>
+              </table>
+            </div>
+            <div style="padding: 10px;">
+              <input type="text" id="commentText" style="width:85%" rows="1"/>
+              <button type="button" id="commentSubmit" class="btn btn-primary" name="commentSubmit">Confirm</button>
+            </div>
+
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    </div><!-- READ PAGE MODAL END -->
+
+
+    <!-- MODIFY REPLY PAGE MODAL START -->
+    <div>
+      <div class="modal fade" id="modifyReply">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 class="modal-title" id="readModal-title"></h3>
+            </div>
+            <div class="modal-body">
+              <table class="table table-striped" width="100%">
+                <tr>
+                  <td width="20%">작성자</td>
+                  <td width="80%"><input type="text" name="writer" id="reply-writer" style="width: 100%; border: 0px; background-color:transparent;" readonly></td>
+                </tr>
+                <tr>
+                  <td>내용</td>
+                  <td><input type="text" name="content" id="reply-text" style="width: 100%; border: 0px; background-color:transparent;"></td>
+                </tr>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="reply-modify" class="btn btn-primary" data-dismiss="modal">Modify</button>
+              <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    </div><!-- MODIFY REPLY PAGE MODAL END -->
+  </div><!-- SERVICE ITEMS END-->
+</div><!-- SERVICE SECTION END -->
+<!-- ===========================
+PORTFOLIO SECTION START
+=========================== -->
+<div id="portfolio" style="height: 1000px">
+  <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
+    <span class="bigicon icon-note"></span>
+    <h3>코드 작성하기</h3>
+    <hr class="separetor">
+  </div><!-- PORTFOLIO SECTION HEAD END -->
+
+  <!-- PORTFOLIO ITEMS START -->
+  <div class="container">
+    <!-- START CUSTOM TABS -->
+    <div class="row">
+      <div class="col-md-8">
+        <!-- Custom Tabs -->
+        <div class="nav-tabs-custom">
+          <ul id="codeTab" class="nav nav-tabs">
+            <li id="li-buttons" class="pull-right"><button type="button" id="add"><i class="fa fa-plus"></i></button><button type="button" id="save"><i class="fa fa-save"></i></button></li>
+          </ul>
+          <div class="tab-content" id="tab-content">
+          </div><!-- /.tab-content -->
+        </div><!-- nav-tabs-custom -->
+      </div><!-- /.col -->
+
+      <div class="col-md-4">
+        <div class="box box-solid">
+          <div class="box-header with-border">
+            <h3 class="box-title">Code Battle API</h3>
+          </div><!-- /.box-header -->
+          <div class="box-body">
+            <div class="box-group" id="accordion">
+              <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
+              <div class="panel box box-primary">
+                <div class="box-header">
+                  <h4 class="box-title">
+                    <a data-toggle="collapse" data-parent="#accordion" rel="#collapseOne">
+                      API variable
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                  <div class="box-body">
+                    heading : 캐릭터가 시야각<br/>
+                    gunHeading : 총의 시야각<br/>
+                    raderHeading : 레이더의 시야각<br/>
+                    getX : 캐릭터의 x좌표<br/>
+                    getY : 캐릭터의 y좌표<br/>
+                    getHp : 캐릭터의 체력
+                  </div>
+                </div>
+              </div>
+              <div class="panel box box-danger">
+                <div class="box-header with-border">
+                  <h4 class="box-title">
+                    <a data-toggle="collapse" data-parent="#accordion" rel="#collapseTwo">
+                      API method
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                  <div class="box-body">
+                    직진 : ahead(거리)<br/>
+                    후진 : back(거리)<br/>
+                    우회전 : turnRight(각도)<br/>
+                    좌회전 : turnLeft(각도)<br/>
+                    레이더 우회전 : turnRadarRight(각도)<br/>
+                    레이더 좌회전 : turnRadarLeft(각도)<br/>
+                    공격 방향 설정 : setAttackAngle(각도)<br/>
+                    공격 : attack(파워)<br/>
+                    정지 : wait(상황)
+                  </div>
+                </div>
+              </div>
+              <div class="panel box box-success">
+                <div class="box-header with-border">
+                  <h4 class="box-title">
+                    <a data-toggle="collapse" data-parent="#accordion" rel="#collapseThree">
+                      scan/hit/hitted event variable
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse">
+                  <div class="box-body">
+                    적과의 거리 : enemy.distance<br/>
+                    적과의 상대각도 : enemy.bearing<br/>
+                    적의 시야각 : enemy.heading
+                  </div>
+                </div>
+              </div>
+              <div class="panel box box-warning">
+                <div class="box-header with-border">
+                  <h4 class="box-title">
+                    <a data-toggle="collapse" data-parent="#accordion" rel="#collapseFour">
+                      wallBlock event variable
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse">
+                  <div class="box-body">
+                    직진시 충돌 : “direction.ahead"<br/>
+                    후진시 충돌 : “direction.back”
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- /.box-body -->
+        </div><!-- /.box -->
+      </div><!-- /.col -->
+    </div> <!-- /.row -->
+    <!-- END CUSTOM TABS -->
+  </div><!-- PORTFOLIO ITEMS END -->
+</div><!-- PORTFOLIO SECTION END -->
+
+<!-- ===========================
+TESTIMONIAL SECTION START
+=========================== -->
+<div id="testimonials" class="container" style="height: 1000px">
+  <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
+    <span class="bigicon icon-game-controller"></span>
+    <h3 id="gamePage">게임하기</h3>
+    <hr class="separetor">
+  </div><!-- TESTIMONIAL SECTIONHEAD END -->
+
+    <section  class="sectionhead wow bounceInUp data-wow-duration=3s animated" style="visibility: visible;
+  animation-name: bounceInUp;padding-top: 1px; ">
+      <div class="col-md-4">
+        <div class ="box box-warning direct-chat direct-chat-warning" style="height: 600px;">
+          <div class="box-header with-border">
+            <h3 class="box-title">WCS Chat</h3>
+            <div class="box-tools pull-right">
+              <span data-toggle="tooltip" title="3 New Messages" class="badge bg-yellow">3</span>
+              <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              <button class="btn btn-box-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle"><i class="fa fa-comments"></i></button>
+              <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+            </div>
+          </div><!-- /.box-header -->
+
+          <div class="box-body">
+            <div class="direct-chat-messages" style="height: 470px;" id="chatScroll">
+            </div>
+          </div>
+
+          <div class="box-footer">
+            <form id="chat" action="">
+              <div class="input-group">
+                <input type="text" id="msg" name="message" placeholder="Type Message ..." class="form-control">
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-warning">Send</button>
+                          </span>
+              </div>
+            </form>
+          </div><!-- /.box-footer-->
+
+        </div>
+      </div>
+      <div id="rankScroll" style="overflow:scroll; height:600px;" class="col-md-7">
+      <table id="rankList" class="table table-striped">
+        <tr>
+          <th style="width: 10px">No</th>
+          <th style="width: 10px">In/Out</th>
+          <th style="width: 20px">Photo</th>
+          <th style="width: 60px">Name</th>
+          <th style="width: 10px">Score</th>
+          <th style="width: 10px">Win</th>
+          <th style="width: 10px">Lose</th>
+          <th>Winning Rate</th>
+        </tr>
+      </table>
+      </div>
+    </section>
+
+  <div>
+    <div class="modal fade" id="gamePlay">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" id="jj">
+            <h3 class="modal-title" id="readModal-title">나의 게임 코드</h3>
+          </div>
+          <div class="modal-body">
+            <table class="table table-striped" width="100%" id='buttonAdd'>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+  </div><!-- MODIFY REPLY PAGE MODAL END -->
+
+
+  <div>
+    <div class="modal fade" id="enemyInfo">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" id="aa">
+            <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
+            <!--<h3 class="modal-title" id="readModal-title" ></h3>-->
+          </div>
+          <div class="modal-body">
+            <table class="table table-striped" width="100%" id="enemyTable1">
+
+
+            </table>
+            <table class="table table-striped" width="100%" id="enemyTable2">
+
+
+            </table>
+          </div>
+          <div class="modal-footer">
+
+            <button type="button" data-dismiss="modal" id="refusal">거절</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+  </div><!-- MODIFY REPLY PAGE MODAL END -->
+
+
+</div><!-- TESTIMONIAL SECTION END -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+<!--Other necessary scripts-->
+<script src="./javascripts/login.js"></script>
+<script src="./javascripts/jquery.nicescroll.min.js"></script>
+<script src="./javascripts/jquery.jribbble-1.0.1.ugly.js"></script>
+<script src="./javascripts/drifolio.js"></script>
+<script src="./javascripts/wow.min.js"></script>
+<script src="./javascripts/loginRegister.js"></script>
+<script src="./javascripts/chatting/chat.js"></script>
+<script src="./javascripts/game/jquery.slimscroll.min.js"></script>
+<script src="./javascripts/game/fastclick.min.js"></script>
+<script src="./javascripts/game/app.min.js"></script>
+<script src="./javascripts/game/demo.js"></script>
+<script src="./javascripts/game/jquery.sparkline.min.js"></script>
+<script src="./javascripts/game/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="./javascripts/game/jquery-jvectormap-world-mill-en.js"></script>
+<script src="./javascripts/game/Chart.min.js"></script>
+<script src="./javascripts/game/ranking.js"></script>
+<script>new WOW().init();</script>
+<script src="./javascripts/board/board.js"></script>
+<script src="./javascripts/code/code.js"></script>
+<script src="./javascripts/mypage/mypage.js"></script>
+
+
+</body>
+</html>

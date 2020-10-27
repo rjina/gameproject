@@ -1,0 +1,177 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require('../app');
+var debug = require('debug')('untitled:server');
+var http = require('http');
+var socketio = require("socket.io");
+
+
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app);
+
+var io = socketio.listen(server);
+
+var idArray = new Array();
+var members = {};
+
+
+io.on('connection', function(socket){
+  socket.on("setID", function(data){
+    console.log(data);
+    socket.userID = data;
+    idArray.push(data);
+    members[data] = socket;
+
+    console.log("배열 : ",idArray);
+    io.emit("members", idArray);
+  });
+
+
+
+  socket.on("chat message", function(data){
+    console.log(data);
+    io.emit("server msg", socket.userID + ":" + data);
+  });
+
+  socket.on("idReNew", function(){
+    io.emit("idReNewSuccess", idArray);
+  });
+
+  socket.on("out", function(data){
+    console.log("logout!!!!!!!!!!!!!!!",data);
+    var index = idArray.indexOf(data);
+
+    if (index > -1) {
+      idArray.splice(index, 1);
+    }
+
+    console.log("배열 : ",idArray);
+    io.emit("members", idArray);
+    io.emit("logout", data);
+  });
+
+  socket.on("battle", function(data){
+    var enemy = members[data.enemy];
+    enemy.emit("enemyInfo",data);
+  });
+
+
+  socket.on("refusal", function(data){
+    var enemy = members[data];
+    enemy.emit("refusal");
+  });
+
+  socket.on("accept", function(data){
+    console.log("나는 수락했따고!!!!!!!!");
+    var enemy = members[data.enemy];
+    enemy.emit("acceptSuccess", data);
+  });
+
+  socket.on('disconnect', function(socket) {
+
+    console.log("누군가 나감");
+    var data = socket.userID;
+    console.log("나간사람 : ", data);
+    var index = idArray.indexOf(data);
+
+    if (index > -1) {
+      idArray.splice(index, 1);
+    }
+
+
+    io.emit("members", idArray);
+    io.emit("logout", data);
+
+  });
+
+
+});
+
+
+
+
+
+module.exports = io;
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}
